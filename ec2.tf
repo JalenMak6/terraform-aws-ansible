@@ -120,8 +120,8 @@ resource "null_resource" "remote_ansible" {
     depends_on = [aws_instance.foo]
     connection {
       type = "ssh"
-      user = "root"
-      host = "192.168.1.30"
+      user = local.remote_user
+      host = local.ansible_node_ip
     }
 
   provisioner "file" {
