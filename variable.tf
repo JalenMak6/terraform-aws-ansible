@@ -1,0 +1,5 @@
+locals {
+  key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCh2Wp1/B75CnuBY+rl/f6cgb6yKXa8fv4PfMyVEAumM4HDlLCc0cA+I3wYz1fj6XCtbEpyTkg6uIL+IuXMwQbBM1UHQ+MuDrI+gzoXvonYqmWcTGWG3y5WAPOdvMWsMHTVIAG/WPff01MjsAuSSSUdG9BDnQw4o+sVE52Jdu2JwFghCdY2CJTaF1g7S74juCEsz0W/7XzYKLBBk5pHcC6WMX1oaltdCDO2GYtASuiZsSL/UWynHusnFXwoRFgrwRdUo4WC3e79Qc4/AEfE/W28M9RjQa4ITXbXkuvfmOslt78ZolhCSL/NICm4ykMjkpTdaNYngBtVmnv+vdvJv6mDUNLLxmo7KpaSqUi21pUdQrUgppkN5c9ST7CPznPjxYn70XDmYocg5Za47+kiNVRfR5Aeunw2qL14HGZtQVKI1sIdvXY0bXCIR18X3zvPXtvm1q+E+J2drd2adAW1w6glK8Yk7t8WnC4OMf2tEMnLOpBwBI3fAaiSWIc70BrXzxM= root@centos-ansible-Grafana-ct"
+  user = "root"
+  host = aws_instance.foo.public_ip
+}
