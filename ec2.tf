@@ -101,7 +101,9 @@ resource "aws_instance" "foo" {
 
 }
 
+#----------- EC2 deploymenet finished ------------
 
+#---------- Check the public IP ------------------
 
 output "public_ip" {
   value = aws_instance.foo.public_ip
@@ -111,10 +113,16 @@ output "gg" {
   value = local.key
 }
 
+
+#---------- store the EC2 public IP to ip.txt ----
+
 resource "local_file" "ip" {
     content = aws_instance.foo.public_ip
     filename = "ip.txt"
 }
+
+
+#---------- Trigger Remote Ansible node to run playbook
 
 resource "null_resource" "remote_ansible" {
     depends_on = [aws_instance.foo]
