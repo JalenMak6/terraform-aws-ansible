@@ -75,7 +75,6 @@ resource "aws_security_group" "sg" {
 
 resource "aws_network_interface" "foo" {
   subnet_id   = aws_subnet.main.id
-  #private_ips = ["10.0.1.10"]
   security_groups = [aws_security_group.sg.id]
   tags = {
     Name = "primary_network_interface"
@@ -83,7 +82,7 @@ resource "aws_network_interface" "foo" {
 }
 
 resource "aws_instance" "foo" {
-  ami           = "ami-0b93ce03dcbcb10f6" # us-east-1
+  ami           = local.ubuntu_ami # us-east-1
   #ami           = "ami-026b57f3c383c2eec"
   instance_type = "t2.micro"
   key_name = "myownkey"
