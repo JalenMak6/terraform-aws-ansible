@@ -85,7 +85,7 @@ resource "aws_instance" "foo" {
   #ami           = "ami-026b57f3c383c2eec"
   instance_type = "t2.micro"
   key_name = "myownkey"
-  user_data = templatefile("/Users/jalenmak/Desktop/Terraform/at/user_data",{
+  user_data = templatefile("user_data",{
         key = local.key
   }
   )
